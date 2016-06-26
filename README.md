@@ -1,2 +1,0 @@
-# varbase-build
-Varbase Build
