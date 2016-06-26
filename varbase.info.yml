@@ -1,0 +1,68 @@
+name: Varbase
+type: profile
+description: 'Varbase is an enhanced Drupal distribution with a lot of necessities.'
+version: 8.x-4.x
+core: 8.x
+distribution:
+  name: Varbase: Drupal Bundled with Necessities | by Vardot
+
+# Required modules
+dependencies:
+  # core
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - comment
+  - config
+  - contact
+  - contextual
+  - datetime
+  #- dblog
+  - dynamic_page_cache
+  - editor
+  - field_ui
+  - file
+  - help
+  - history
+  - image
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - responsive_image
+  - search
+  - shortcut
+  - syslog
+  - taxonomy
+  - telephone
+  - toolbar
+  - tour
+  - views
+  - views_ui
+
+  # contrib
+  #- field_group
+  #- focal_point
+  #- embed
+  #- entity_embed
+  #- inline_entity_form
+  #- linkit
+  #- metatag
+  #- media_entity
+  #- scheduler
+  #- pathauto
+  #- paragraphs
+
+  # Our own core functionality.
+
+
+themes:
+  - bartik
+  - seven
