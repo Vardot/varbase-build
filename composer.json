@@ -18,43 +18,76 @@
             "url": "https://packagist.drupal-composer.org"
         }
     ],
-    "extra": {
-        "installer-paths": {
-            "docroot/core": [
-                "drupal/core"
-            ],
-            "modules/contrib/{$name}": [
-                "type:drupal-module"
-            ]
-        }
+ "extra": {
+    "installer-paths": {
+        "docroot/core": [
+            "drupal/core"
+        ],
+        "modules/contrib/{$name}": [
+            "type:drupal-module"
+        ],
+        "themes/contrib/{$name}": [
+            "type:drupal-theme"
+        ]
     },
-    "require": {
-        "cweagans/composer-patches": "^1.5.0",
-        "composer/installers": "^1.0",
-        "drupal/core": "^8.1.0",
-        "drupal/embed": "^8.1.0",
-        "drupal/entity_embed": "8.1.0-alpha1",
-        "drupal/media_entity": "^8.1.0",
-        "drupal/media_entity_instagram": "^8.1.0",
-        "drupal/media_entity_twitter": "^8.1.0",
-        "drupal/media_entity_image": "^8.1.0",
-        "drupal/ctools": "8.3.0-alpha26",
-        "drupal/panels": "8.3.0-beta4",
-        "drupal/page_manager": "8.1.0-alpha23",
-        "drupal/panelizer": "8.3.0-alpha2",
-        "drupal/scheduled_updates": "8.1.0-alpha5",
-        "drupal/workbench_moderation": "8.1.0",
-        "drupal/acquia_connector": "^8.1.1",
-        "drupal/config_update": "^8.1.1",
-        "drupal/features": "^8.3.0",
-        "drupal/inline_entity_form": "^8.1.0",
-        "drupal/metatag": "^8.1.0",
-        "drupal/token": "^8.1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/pathauto": "^8.1.0",
-        "drupal/entity_browser": "8.1.0-alpha3",
-        "drupal/views_infinite_scroll": "8.1.0",
-        "drupal/media_entity_document": "^8.1.0",
-        "drupal/video_embed_field": "^8.1.0"
-    }
+    "patches": {
+        "drupal/ctools": {
+            "2747739 - Mega patch":
+            "https://www.drupal.org/files/issues/ctools--8.x-3.0-alpha26--1fe3649.patch"
+        },
+        "drupal/page_manager": {
+            "2747739 - Mega Patch":
+            "https://www.drupal.org/files/issues/page_manager--alpha23-09e79ff--2747739-3.patch"
+        },
+        "drupal/panelizer": {
+            "2747739 - Mega Patch":
+            "https://www.drupal.org/files/issues/panelizer--alpha2-1ddfa61--2747739-5.patch",
+            "2701349 - Generate new UUIDs for displays when switching from default to field storage":
+            "https://www.drupal.org/files/issues/2701349-2.patch",
+            "2700597 - Explicitly set the Panels IPE URL root when saving in Panelizer":
+            "https://www.drupal.org/files/issues/panelizer-ipe-url-root-handling.patch",
+            "2664682 - Implement admin UI for editing Panelizer defaults":
+            "https://www.drupal.org/files/issues/2664682-45.patch"
+        },
+        "drupal/panels": {
+            "2667754 - Allow other modules to disable the IPE based on custom logic":
+            "https://www.drupal.org/files/issues/2667754-3.patch",
+            "Bandaid tempstore patch":
+            "https://www.drupal.org/files/issues/bandaid.patch",
+            "2697587 - Wizard API integration":
+            "https://www.drupal.org/files/issues/2697587-42.patch"
+        },
+        "drush/drush": {
+            "Adding composer.json support to make-convert command":
+            "https://github.com/drush-ops/drush/commit/ce82b946d49b09cd33da5ca84feb24a6c35f8f8e.patch"
+        }
+    } 
+  },
+  "require": {
+      "cweagans/composer-patches": "^1.5.0",
+      "composer/installers": "^1.0",
+      "drupal/core": "^8.1.0",
+      "drupal/config_update": "8.x-1.1",
+      "drupal/composer_manager": "8.x-1.0-rc2",
+      "drupal/ctools": "8.x-3.0-alpha26",
+      "drupal/token": "8.x-1.0-alpha2",
+      "drupal/pathauto": "8.x-1.0-alpha3",
+      "drupal/page_manager": "8.x-1.0-alpha23",
+      "drupal/panels": "8.x-3.0-beta4",
+      "drupal/panelizer": "8.x-3.0-alpha2",
+      "drupal/layout_plugin": "8.x-1.0-alpha22",
+      "drupal/bootstrap_layouts": "8.x-3.1",
+      "drupal/ds": "8.x-2.5",
+      "drupal/field_group": "8.x-1.0-rc4",
+      "drupal/smart_trim": "8.x-1.0-rc4",
+      "drupal/advanced_text_formatter": "8.x-1.0-beta3",
+      "drupal/block_class": "8.x-1.x-dev",
+      "drupal/metatag": "8.x-1.0-beta4",
+      "drupal/simple_sitemap": "8.x-2.5",
+      "drupal/google_analytics": "8.x-2.0",
+      "drupal/extlink": "8.x-1.0-alpha2",
+      "drupal/features": "8.x-3.x-dev",
+      "drupal/bootstrap": "8.x-3.0-beta3",
+      "drupal/adminimal_theme": "8.x-1.1"
+  }
 }
