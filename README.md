@@ -11,5 +11,5 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project Vardot/varbase-build:8.x some-dir --stability dev --no-interaction
+composer create-project Vardot/varbase-build:dev-8.x-1.x PROJECT_DIR_NAME --stability dev --no-interaction
 ```
