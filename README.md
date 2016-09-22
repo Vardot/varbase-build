@@ -13,3 +13,7 @@ After that you can create the project:
 ```
 composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability dev --no-interaction
 ```
+
+```
+composer create-project Vardot/varbase-build:8.4.0-beta2 PROJECT_DIR_NAME --stability beta --no-interaction
+```
