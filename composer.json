@@ -4,42 +4,39 @@
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
-        {
-            "name": "Vardot",
-            "role": "Development"
-        }
+      {
+        "name": "Vardot",
+        "role": "Development"
+      }
     ],
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packagist.drupal-composer.org"
-        }
+      {
+        "type": "composer",
+        "url": "https://packagist.drupal-composer.org"
+      }
     ],
-    "require": {
-        "composer/installers": "^1.0.20",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
-        "cweagans/composer-patches": "~1.0",
-        "drupal/core": "~8.0",
-        "drush/drush": "~8.0",
-        "drupal/console": "~1.0",
-        "drupal/varbase": "8.4.*@beta"
-    },
     "require-dev": {
-        "drush/drush": "^9.0",
-        "drupal/drupal-extension": "^3.2",
-        "jakoch/phantomjs-installer": "1.9.8",
-        "behat/behat": "^3.0",
-        "drupal/coder": "8.*",
-        "phing/phing": "^2.14",
-        "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
-        "mikey179/vfsStream": "~1.2",
-        "phpunit/phpunit": "~4.8",
-        "guzzlehttp/guzzle": "^6.1",
-        "symfony/css-selector": "~2.8",
-        "squizlabs/php_codesniffer": "2.*",
-        "behatch/contexts": "*",
-        "emuse/behat-html-formatter": "@stable"
+      "drush/drush": "^9.0",
+      "drupal/drupal-extension": "^3.2",
+      "jakoch/phantomjs-installer": "1.9.8",
+      "behat/behat": "^3.0",
+      "drupal/coder": "8.*",
+      "phing/phing": "^2.14",
+      "behat/mink": "~1.7",
+      "behat/mink-goutte-driver": "~1.2",
+      "mikey179/vfsStream": "~1.2",
+      "phpunit/phpunit": "~4.8",
+      "guzzlehttp/guzzle": "^6.1",
+      "symfony/css-selector": "~2.8",
+      "squizlabs/php_codesniffer": "2.*",
+      "behatch/contexts": "*",
+      "emuse/behat-html-formatter": "@stable"
+    },
+    "require": {
+        "composer/installers": "^1.0",
+        "drupal-composer/drupal-scaffold": "^2.0.0",
+        "cweagans/composer-patches": "1.5.0",
+        "drupal/varbase": "8.4.*@beta"
     },
     "config": {
         "bin-dir": "bin/"
@@ -50,32 +47,25 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
+      "classmap": [
+        "scripts/composer/ScriptHandler.php"
+      ]
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
+      "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+      "pre-install-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
+      "pre-update-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
+      "post-install-cmd": ["DrupalProject\\composer\\ScriptHandler::createRequiredFiles"],
+      "post-update-cmd": ["DrupalProject\\composer\\ScriptHandler::createRequiredFiles"]
     },
     "extra": {
-        "installer-paths": {
-            "docroot/core": ["type:drupal-core"],
-            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-            "docroot/profiles/{$name}": ["type:drupal-profile"],
-            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
-        }
+      "installer-paths": {
+        "docroot/core": ["drupal/core"],
+        "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+        "docroot/profiles/{$name}": ["type:drupal-profile"],
+        "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+        "drush/contrib/{$name}": ["type:drupal-drush"]
+      },
+      "enable-patching": true
     }
 }
