@@ -19,8 +19,8 @@ composer create-project Vardot/varbase-build:8.4.0-beta5 PROJECT_DIR_NAME --stab
 ```
 
 ## Automated testing
-To run the automated testing with behat you will need to change the wd_host and base_url settings in the
-behat.varbase.yml file to go with you project configuration and the selenium server.
+To run the automated testing with behat you will need to change the [ wd_host and base_url ] settings in the
+[ behat.varbase.yml ] file to go with your project configuration and the selenium server.
 
 ```
     Behat\MinkExtension:
@@ -40,9 +40,11 @@ behat.varbase.yml file to go with you project configuration and the selenium ser
       javascript_session: selenium2
 ```
       
-Then go to PROJECT_DIR_NAME/docroot/profiles/varbase in the terminal then you could run the following command:
+Then go to [ PROJECT_DIR_NAME/docroot/profiles/varbase ] in the terminal then you could run the following command:
 
 ```
 $ ../../../bin/behat tests/features/varbase
 
 ```
+Then you will be able to open the full report for the automated test in a web browser at the following path:
+[ PROJECT_DIR_NAME/docroot/profiles/varbase/tests/reports/index.html ]
