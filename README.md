@@ -17,3 +17,32 @@ composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability de
 ```
 composer create-project Vardot/varbase-build:8.4.0-beta5 PROJECT_DIR_NAME --stability beta --no-interaction
 ```
+
+## Automated testing
+To run the automated testing with behat you will need to change the wd_host and base_url settings in the
+behat.varbase.yml file to go with you project configuration and the selenium server.
+
+```
+    Behat\MinkExtension:
+      files_path: "%paths.base%/tests/assets/"
+      goutte: ~
+      selenium2:
+        wd_host: 127.0.0.1:4445/wd/hub
+        capabilities:
+          browser: 'firefox'
+          # browser: 'chrome'
+          # browser: 'phantomjs'
+          nativeEvents: true
+      base_url: 'http://127.0.0.1:8080'
+      browser_name: 'firefox'
+      # browser_name: 'chrome'
+      # browser_name: 'phantomjs'
+      javascript_session: selenium2
+```
+      
+Then go to PROJECT_DIR_NAME/docroot/profiles/varbase in the terminal then you could run the following command:
+
+```
+$ ../../../bin/behat tests/features/varbase
+
+```
