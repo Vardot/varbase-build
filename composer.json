@@ -36,7 +36,7 @@
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "1.5.0",
-        "drupal/varbase": "8.4.*@beta"
+        "drupal/varbase": "8.4.*@dev"
     },
     "config": {
         "bin-dir": "bin/"
