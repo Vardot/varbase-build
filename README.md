@@ -15,7 +15,7 @@ composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability de
 ```
 
 ```
-composer create-project Vardot/varbase-build:8.4.0-beta5 PROJECT_DIR_NAME --stability beta --no-interaction
+composer create-project Vardot/varbase-build:8.4.0-beta6 PROJECT_DIR_NAME --stability beta --no-interaction
 ```
 
 ## Automated testing
