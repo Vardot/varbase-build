@@ -16,7 +16,6 @@
       }
   ],
   "require-dev": {
-    "drush/drush": "^9.0",
     "drupal/drupal-extension": "^3.2",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "jakoch/phantomjs-installer": "1.9.8",
@@ -39,8 +38,6 @@
     "composer/installers": "^1.0.20",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "^1.5.0",
-    "drupal/core": "8.2.1",
-    "drush/drush": "^9.0",
     "drupal/console": "~1.0",
     "drupal/varbase": "4.0-beta9",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
