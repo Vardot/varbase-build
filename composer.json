@@ -39,7 +39,7 @@
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "cweagans/composer-patches": "1.5.0",
-    "drupal/varbase": "8.4.0-beta7",
+    "drupal/varbase": "8.4.0-beta8",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
   },
   "config": {
