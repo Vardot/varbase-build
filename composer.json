@@ -42,7 +42,7 @@
     "drupal/core": "8.2.1",
     "drush/drush": "^9.0",
     "drupal/console": "~1.0",
-    "drupal/varbase": "4.0-beta9",
+    "drupal/varbase": "8.4.0-beta9",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
   },
   "config": {
