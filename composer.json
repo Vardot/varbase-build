@@ -40,6 +40,7 @@
     "cweagans/composer-patches": "1.5.0",
     "drush/drush": "^9.0",
     "drupal/console": "~1.0",
+    "drupal/core": "8.2.2",
     "drupal/varbase": "4.0-beta9",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
   },
