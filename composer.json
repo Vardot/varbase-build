@@ -38,6 +38,7 @@
     "composer/installers": "^1.0.20",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "^1.5.0",
+    "drush/drush": "^9.0",
     "drupal/console": "~1.0",
     "drupal/varbase": "4.0-beta9",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
@@ -46,18 +47,22 @@
       "bin-dir": "bin/"
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "autoload": {
-      "classmap": [
-          "scripts/composer/ScriptHandler.php"
-      ]
-  },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "pre-install-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
     "pre-update-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
-    "post-install-cmd": ["DrupalProject\\composer\\ScriptHandler::createRequiredFiles"],
-    "post-update-cmd": ["DrupalProject\\composer\\ScriptHandler::createRequiredFiles"]
+    "post-install-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+      "Vardot\\Varbase\\Scripts::procedure"
+    ],
+    "post-update-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+      "Vardot\\Varbase\\Procedures::procedure"
+    ]
+  },
+  "prefer-stable": true,
+    "autoload": {
+      "classmap": [
+        "scripts/Procedures.php"
+      ]
   },
   "extra": {
     "installer-paths": {
@@ -65,7 +70,7 @@
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "drush/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true
   }
