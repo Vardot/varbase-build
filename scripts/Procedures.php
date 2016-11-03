@@ -31,7 +31,7 @@ class Procedures {
   }
   
   /**
-   * Post Update proceduare.
+   * Post update proceduare.
    *
    * @param \Composer\Script\Event $event
    *   The script event.

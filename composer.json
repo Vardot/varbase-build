@@ -52,7 +52,7 @@
     "pre-install-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
     "pre-update-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
     "post-install-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "Vardot\\Varbase\\Scripts::procedure"
+      "Vardot\\Varbase\\Procedures::procedure"
     ],
     "post-update-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
       "Vardot\\Varbase\\Procedures::procedure"
