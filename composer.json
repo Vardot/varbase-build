@@ -19,7 +19,7 @@
     "drupal/drupal-extension": "^3.2",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "jakoch/phantomjs-installer": "1.9.8",
-    "behat/behat": "^3.0",
+    "behat/behat": "^3.1",
     "drupal/coder": "8.*",
     "phing/phing": "^2.14",
     "behat/mink": "~1.7",
@@ -35,9 +35,9 @@
     "emuse/behat-html-formatter": "@stable"
   },
   "require": {
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "^2.0.1",
-    "cweagans/composer-patches": "^1.5.0",
+    "composer/installers": "^1.0",
+    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "cweagans/composer-patches": "1.5.0",
     "drush/drush": "^9.0",
     "drupal/console": "~1.0",
     "drupal/varbase": "4.0-beta9",
@@ -50,19 +50,33 @@
   "prefer-stable": true,
     "autoload": {
       "classmap": [
-        "scripts/Procedures.php"
+        "scripts/composer/ScriptHandler.php",
+        "scripts/varbase/Procedures.php"
       ]
   },
   "scripts": {
-    "post-install-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold", "Vardot\\Varbase\\Procedures::postInstallProcedure"],
-    "post-update-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold", "Vardot\\Varbase\\Procedures::postUpdateProcedure"]
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "Vardot\\Varbase\\Procedures::postInstallProcedure"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "Vardot\\Varbase\\Procedures::postUpdateProcedure"
+    ],
+    "varbase-test": "bin/behat profiles/varbase/tests/features/varbase"
   },
   "extra": {
     "installer-paths": {
-      "docroot/core": ["drupal/core"],
-      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-      "docroot/profiles/{$name}": ["type:drupal-profile"],
-      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "docroot/{$name}": ["type:drupal-profile"],
+      "docroot/profiles/varbase/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/varbase/themes/contrib/{$name}": ["type:drupal-theme"],
       "drush/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true
