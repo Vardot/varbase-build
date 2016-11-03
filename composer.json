@@ -47,22 +47,15 @@
       "bin-dir": "bin/"
   },
   "minimum-stability": "dev",
-  "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "pre-install-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
-    "pre-update-cmd": ["DrupalProject\\composer\\ScriptHandler::checkComposerVersion"],
-    "post-install-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "Vardot\\Varbase\\Procedures::postInstallProcedure"
-    ],
-    "post-update-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "Vardot\\Varbase\\Procedures::postUpdateProcedure"
-    ]
-  },
   "prefer-stable": true,
     "autoload": {
       "classmap": [
         "scripts/Procedures.php"
       ]
+  },
+  "scripts": {
+    "post-install-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold", "Vardot\\Varbase\\Procedures::postInstallProcedure"],
+    "post-update-cmd": ["DrupalComposer\\DrupalScaffold\\Plugin::scaffold", "Vardot\\Varbase\\Procedures::postUpdateProcedure"]
   },
   "extra": {
     "installer-paths": {
