@@ -78,6 +78,7 @@
   },
   "extra": {
     "installer-paths": {
+      "docroot/core": ["type:drupal-core"],
       "docroot": ["type:drupal-profile"],
       "docroot/sites/default/libraries/{$name}": ["type:drupal-library"],
       "docroot/sites/default/modules/contrib/{$name}": ["type:drupal-module"],
