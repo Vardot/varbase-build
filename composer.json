@@ -78,11 +78,10 @@
   },
   "extra": {
     "installer-paths": {
-      "docroot/core": ["type:drupal-core"],
-      "docroot/libraries/{$name}": ["type:drupal-library"],
-      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-      "docroot/{$name}": ["type:drupal-profile"],
-      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "docroot": ["type:drupal-profile"],
+      "docroot/sites/default/libraries/{$name}": ["type:drupal-library"],
+      "docroot/sites/default/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/sites/default/themes/contrib/{$name}": ["type:drupal-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true
