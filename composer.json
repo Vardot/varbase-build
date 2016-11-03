@@ -40,7 +40,6 @@
     "cweagans/composer-patches": "1.5.0",
     "drush/drush": "^9.0",
     "drupal/console": "~1.0",
-    "drupal/core": "8.2.2",
     "drupal/varbase": "4.0-beta9",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
   },
@@ -74,11 +73,18 @@
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
       "Vardot\\Varbase\\Procedures::postUpdateProcedure"
     ],
-    "varbase-test": "bin/behat profiles/varbase/tests/features/varbase"
+    "varbase-check-tests": "scripts/varbase/cmd/varbase-check-tests.sh",
+    "varbase-init-tests": "scripts/varbase/cmd/varbase-init-tests.sh",
+    "varbase-apply-tests": "scripts/varbase/cmd/varbase-apply-tests.sh",
+    "varbase-cleanup-tests": "scripts/varbase/cmd/varbase-cleanup-tests.sh",
+    "varbase-full-tests": "scripts/varbase/cmd/varbase-full-tests.sh",
+    "varbase-full-local-tests": "scripts/varbase/cmd/varbase-full-tests.sh",
+    "varbase-full-development-tests": "scripts/varbase/cmd/varbase-full-development-tests.sh",
+    "varbase-full-staging-tests": "scripts/varbase/cmd/varbase-full-staging-tests.sh",
+    "varbase-full-production-tests": "scripts/varbase/cmd/varbase-full-production-tests.sh"
   },
   "extra": {
     "installer-paths": {
-      "docroot/core": ["type:drupal-core"],
       "docroot": ["type:drupal-profile"],
       "docroot/sites/default/libraries/{$name}": ["type:drupal-library"],
       "docroot/sites/default/modules/contrib/{$name}": ["type:drupal-module"],
