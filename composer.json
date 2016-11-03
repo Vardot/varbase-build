@@ -46,6 +46,9 @@
   "config": {
       "bin-dir": "bin/"
   },
+  "conflict": {
+      "drupal/drupal": "*"
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
     "autoload": {
@@ -74,10 +77,12 @@
   },
   "extra": {
     "installer-paths": {
-      "docroot/{$name}": ["type:drupal-profile"],
-      "docroot/profiles/varbase/modules/contrib/{$name}": ["type:drupal-module"],
-      "docroot/profiles/varbase/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/{$name}": ["type:drupal-drush"]
+      "docroot/core": ["type:drupal-core"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true
   }
