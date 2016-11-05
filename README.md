@@ -11,7 +11,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project Vardot/varbase-build:8.4.0-beta9 PROJECT_DIR_NAME --stability beta --no-interaction
+composer create-project Vardot/varbase-build:8.4.0-beta10 PROJECT_DIR_NAME --stability beta --no-interaction
 ```
 
 If you want to create a project with the development option, to get the latest
@@ -49,5 +49,13 @@ Then go to [ PROJECT_DIR_NAME/docroot/profiles/varbase ] in the terminal then yo
 $ ../../../bin/behat tests/features/varbase
 
 ```
+or 
+
+```
+$ composer run-script varbase-full-tests
+
+```
+
 Then you will be able to open the full report for the automated test in a web browser at the following path:
 [ PROJECT_DIR_NAME/docroot/profiles/varbase/tests/reports/index.html ]
+

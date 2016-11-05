@@ -5,10 +5,9 @@
  */
 namespace Vardot\Varbase;
 use Composer\Script\Event;
-use Composer\Util\ProcessExecutor;
 class Procedures {
   /**
-   * Post install proceduare.
+   * Post install procedure.
    *
    * @param \Composer\Script\Event $event
    *   The script event.
@@ -21,17 +20,11 @@ class Procedures {
           $varbase = $path;
         }
       }
-      if (isset($varbase)) {
-        $varbase = str_replace('{$name}', 'varbase', $varbase);
-        $executor = new ProcessExecutor($event->getIO());
-        $output = NULL;
-        $executor->execute('npm run install-libraries', $output, $varbase);
-      }
     }
   }
   
   /**
-   * Post update proceduare.
+   * Post update procedure.
    *
    * @param \Composer\Script\Event $event
    *   The script event.
@@ -43,12 +36,6 @@ class Procedures {
         if (array_intersect(['drupal/varbase', 'type:drupal-profile'], $criteria)) {
           $varbase = $path;
         }
-      }
-      if (isset($varbase)) {
-        $varbase = str_replace('{$name}', 'varbase', $varbase);
-        $executor = new ProcessExecutor($event->getIO());
-        $output = NULL;
-        $executor->execute('npm run install-libraries', $output, $varbase);
       }
     }
   }
