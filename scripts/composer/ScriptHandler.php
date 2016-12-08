@@ -7,10 +7,27 @@ namespace DrupalProject\composer;
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
 use Symfony\Component\Filesystem\Filesystem;
+
+/**
+ * Composer default script handler.
+ */
 class ScriptHandler {
+  
+  /**
+   * Get the Drupal root directory.
+   * 
+   * @param type $project_root
+   * @return type
+   */
   protected static function getDrupalRoot($project_root) {
     return $project_root . '/docroot';
   }
+  
+  /**
+   * Create required files.
+   * 
+   * @param Event $event
+   */
   public static function createRequiredFiles(Event $event) {
     $fs = new Filesystem();
     $root = static::getDrupalRoot(getcwd());
@@ -46,6 +63,7 @@ class ScriptHandler {
       $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
   }
+  
   /**
    * Checks if the installed version of Composer is compatible.
    *

@@ -3,9 +3,26 @@
  * @file
  * Contains \Vardot\Varbase\Procedures.
  */
+
 namespace Vardot\Varbase;
 use Composer\Script\Event;
+use Symfony\Component\Filesystem\Filesystem;
+
+/**
+ * Varbase build default procedures and script handler.
+ */
 class Procedures {
+  
+  /**
+   * Get the Drupal root directory.
+   * 
+   * @param type $project_root
+   * @return type
+   */
+  protected static function getDrupalRoot($project_root) {
+    return $project_root . '/docroot';
+  }
+  
   /**
    * Post install procedure.
    *
@@ -20,6 +37,19 @@ class Procedures {
           $varbase = $path;
         }
       }
+    }
+    
+    
+    try {
+      // Remove the not needed vendor directory as we are using the varbase-build composer file.
+      $fs = new Filesystem();
+      $root = static::getDrupalRoot(getcwd());
+
+      if (!$fs->exists($root . '/vendor')) {
+        $fs->remove($root . '/vendor');
+      }
+    } catch (IOExceptionInterface $e) {
+        echo "An error occurred while removing the not needed vendor directory at ".$e->getPath();
     }
   }
   
@@ -38,5 +68,18 @@ class Procedures {
         }
       }
     }
+    
+    try {
+      // Remove the not needed vendor directory as we are using the varbase-build composer file.
+      $fs = new Filesystem();
+      $root = static::getDrupalRoot(getcwd());
+
+      if (!$fs->exists($root . '/vendor')) {
+        $fs->remove($root . '/vendor');
+      }
+    } catch (IOExceptionInterface $e) {
+        echo "An error occurred while removing the not needed vendor directory at ".$e->getPath();
+    }
+    
   }
 }
