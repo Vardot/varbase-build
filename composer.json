@@ -44,8 +44,7 @@
     "drush/drush": "^9.0",
     "drupal/console": "~1.0",
     "drupal/core": "8.2.4",
-    "drupal/varbase": "4.0-beta12",
-    "mkalkbrenner/php-htmldiff-advanced": "~0.0.8"
+    "drupal/varbase": "4.0-beta12"
   },
   "config": {
       "bin-dir": "bin/"
@@ -90,7 +89,7 @@
   "extra": {
     "installer-paths": {
       "docroot/core": ["type:drupal-core"],
-      "docroot/profiles/{$name}": ["type:drupal-profile"],
+      "docroot": ["type:drupal-profile"],
       "docroot/libraries/{$name}": ["type:drupal-library"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
