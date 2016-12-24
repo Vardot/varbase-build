@@ -11,7 +11,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project Vardot/varbase-build:8.4.0-beta12 PROJECT_DIR_NAME --stability beta --no-interaction
+composer create-project Vardot/varbase-build:8.4.0-beta13 PROJECT_DIR_NAME --stability beta --no-interaction
 ```
 
 If you want to create a project with the development option, to get the latest
