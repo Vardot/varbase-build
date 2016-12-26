@@ -26,7 +26,7 @@ composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability de
 composer create-new-vartheme "THEME_NAME" "docroot/sites/default/themes/custom"
 ```
 
-or to create a new theme in the docroot/thtems/custom
+or to create a new theme in the docroot/themes/custom
 ```
 composer create-new-vartheme "THEME_NAME"
 ```
