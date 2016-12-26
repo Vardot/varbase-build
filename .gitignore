@@ -4,7 +4,7 @@ docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
 acquia-file
-log
+/log
 docroot/sites/default/settings.local.php
 
 
