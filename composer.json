@@ -76,6 +76,7 @@
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
       "Vardot\\Varbase\\Procedures::postUpdateProcedure"
     ],
+    "create-new-vartheme": "scripts/varbase/cmd/create-new-vartheme.sh",
     "varbase-check-tests": "scripts/varbase/cmd/varbase-check-tests.sh",
     "varbase-init-tests": "scripts/varbase/cmd/varbase-init-tests.sh",
     "varbase-apply-tests": "scripts/varbase/cmd/varbase-apply-tests.sh",

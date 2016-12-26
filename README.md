@@ -21,6 +21,16 @@ development work.
 composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability dev --no-interaction
 ```
 
+## Create new Vartheme subtheme for a project.
+```
+composer create-new-vartheme "THEME_NAME" "docroot/sites/default/themes/custom"
+```
+
+or to create a new theme in the docroot/thtems/custom
+```
+composer create-new-vartheme "THEME_NAME"
+```
+
 ## Automated testing
 To run the automated testing with behat you will need to change the [ wd_host and base_url ] settings in the
 [ behat.varbase.yml ] file to go with your project configuration and the selenium server.
