@@ -8,7 +8,7 @@ First you need to [install composer](https://getcomposer.org/doc/00-intro.md#ins
 You might need to replace `composer` with `php composer.phar` (or similar)
 for your setup.
 
-After that you can create the project:
+## After that you can create the project:
 
 ```
 composer create-project Vardot/varbase-build:8.4.0-beta13 PROJECT_DIR_NAME --stability beta --no-interaction
@@ -23,12 +23,17 @@ composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability de
 
 ## Create new Vartheme subtheme for a project.
 ```
-composer create-new-vartheme "THEME_NAME" "docroot/sites/default/themes/custom"
+composer create-new-vartheme "THEME_NAME" "ltr" "docroot/sites/default/themes/custom"
+```
+
+For right to left themes.
+```
+composer create-new-vartheme "THEME_NAME" "rtl" "docroot/sites/default/themes/custom"
 ```
 
 or to create a new theme in the docroot/themes/custom
 ```
-composer create-new-vartheme "THEME_NAME"
+composer create-new-vartheme "THEME_NAME" "ltr"
 ```
 
 ## Automated testing
@@ -108,4 +113,3 @@ $ ../../../bin/behat tests/features/varbase
 
 Then you will be able to open the full report for the automated test in a web browser at the following path:
 [ PROJECT_DIR_NAME/docroot/profiles/varbase/tests/reports ]
-
