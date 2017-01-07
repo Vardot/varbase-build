@@ -80,7 +80,7 @@ if [[ ! -d "$theme_path/$theme_name" ]]; then
   cp -r docroot/profiles/varbase/themes/vartheme/VARTHEME_SUBTHEME ${theme_path}/${theme_name} ;
 
   # 2. Rename VARTHEME_SUBTHEME.starterkit.yml your_subtheme_name.info.yml
-  mv ${theme_path}/${theme_name}/VARTHEME_SUBTHEME.starterkit.yml ${theme_path}/${theme_name}/green.info.yml ;
+  mv ${theme_path}/${theme_name}/VARTHEME_SUBTHEME.starterkit.yml ${theme_path}/${theme_name}/${theme_name}.info.yml ;
 
   # 3. Rename VARTHEME_SUBTHEME.libraries.yml your_subtheme_name.libraries.yml
   mv ${theme_path}/${theme_name}/VARTHEME_SUBTHEME.libraries.yml ${theme_path}/${theme_name}/${theme_name}.libraries.yml ;
