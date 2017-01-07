@@ -39,7 +39,7 @@
     "cweagans/composer-patches": "^1.5.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "drupal/drupal-library-installer-plugin": "~0.3",
-    "drupal/varbase": "4.0.0-beta14"
+    "vardot/varbase": "4.0-beta14"
   },
   "config": {
       "bin-dir": "bin/"
