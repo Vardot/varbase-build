@@ -38,19 +38,6 @@ class Procedures {
         }
       }
     }
-    
-    
-    try {
-      // Remove the not needed vendor directory as we are using the varbase-build composer file.
-      $fs = new Filesystem();
-      $root = static::getDrupalRoot(getcwd());
-
-      if (!$fs->exists($root . '/vendor')) {
-        $fs->remove($root . '/vendor');
-      }
-    } catch (IOExceptionInterface $e) {
-        echo "An error occurred while removing the not needed vendor directory at ".$e->getPath();
-    }
   }
   
   /**
@@ -68,18 +55,5 @@ class Procedures {
         }
       }
     }
-    
-    try {
-      // Remove the not needed vendor directory as we are using the varbase-build composer file.
-      $fs = new Filesystem();
-      $root = static::getDrupalRoot(getcwd());
-
-      if (!$fs->exists($root . '/vendor')) {
-        $fs->remove($root . '/vendor');
-      }
-    } catch (IOExceptionInterface $e) {
-        echo "An error occurred while removing the not needed vendor directory at ".$e->getPath();
-    }
-    
   }
 }
