@@ -39,7 +39,7 @@
     "cweagans/composer-patches": "^1.5.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "drupal/drupal-library-installer-plugin": "~0.3",
-    "drupal/varbase": "4.0.0-beta14"
+    "drupal/varbase": "4.0.0-beta15"
   },
   "config": {
       "bin-dir": "bin/"
@@ -85,7 +85,7 @@
   "extra": {
     "installer-paths": {
       "docroot/core": ["type:drupal-core"],
-      "docroot": ["type:drupal-profile"],
+      "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/libraries/{$name}": ["type:drupal-library"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
