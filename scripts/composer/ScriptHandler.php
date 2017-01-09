@@ -35,6 +35,7 @@ class ScriptHandler {
       'modules',
       'profiles',
       'themes',
+      'libraries',
     ];
     // Required for unit testing
     foreach ($dirs as $dir) {
