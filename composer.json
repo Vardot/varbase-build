@@ -42,7 +42,7 @@
     "drupal/drupal-library-installer-plugin": "~0.3",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8",
     "enyo/dropzone": "4.3.0",
-    "vardot/varbase": "4.0.0-beta15"
+    "vardot/varbase": "8.4.0-beta15"
   },
   "config": {
       "bin-dir": "bin/"
