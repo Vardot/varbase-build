@@ -14,13 +14,13 @@ if [ "$1" != "" ]; then
     theme_name=$1;
   else
     echo "---------------------------------------------------------------------------";
-    echo "   Theme name is not a valid theme name.                                   ";
+    echo "   Theme name is not a valid theme name!                                   ";
     echo "---------------------------------------------------------------------------";
     exit 1;
   fi
 else
   echo "---------------------------------------------------------------------------";
-  echo "   Please add the name of your theme.                                      ";
+  echo "   Please add the name of your theme!                                      ";
   echo "---------------------------------------------------------------------------";
   exit 1;
 fi
@@ -38,7 +38,7 @@ if [ "$2" != "" ]; then
     direction=$2;
   else
     echo "---------------------------------------------------------------------------";
-    echo "   Direction of language is not valid.                                     ";
+    echo "   Direction of language is not valid!                                     ";
     echo "    ltr - for (left to right) languages.                                   ";
     echo "    rtl - for (right to left) languages.                                   ";
     echo "---------------------------------------------------------------------------";
@@ -63,7 +63,7 @@ if [ "$3" != "" ]; then
     fi
   else
     echo "---------------------------------------------------------------------------";
-    echo "   Theme path must be in the right format.                                 ";
+    echo "   Theme path must be in the right format!                                 ";
     echo "---------------------------------------------------------------------------";
     exit 1;
   fi
@@ -137,13 +137,13 @@ if [[ ! -d "$theme_path/$theme_name" ]]; then
   echo "${generated_log}"  >> ${theme_path}/${theme_name}/README.md;
 
   echo "---------------------------------------------------------------------------";
-  echo "   The new Vartheme subtheme was create at \"${theme_path}/${theme_name}\" ";
+  echo "   The new Vartheme subtheme were created at \"${theme_path}/${theme_name} :)\" ";
   echo "---------------------------------------------------------------------------";
   exit 0;
 
 else
   echo "---------------------------------------------------------------------------";
-  echo "   The folder \"${theme_path}/${theme_name}\" theme in is already in the site ";
+  echo "   The folder \"${theme_path}/${theme_name}\" is already in the site!";
   echo "---------------------------------------------------------------------------";
   exit 1;
 fi
