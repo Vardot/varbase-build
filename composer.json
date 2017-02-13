@@ -5,19 +5,54 @@
   "license": "GPL-2.0+",
   "authors": [
     {
-      "name": "Vardot",
-      "role": "Development"
+      "name": "Mohammed J. Razem",
+      "homepage": "https://github.com/moerazem",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Rajab Natshah",
+      "homepage": "https://github.com/Natshah",
+      "role": "Maintainer"
     }
   ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/varbase",
+    "source": "http://cgit.drupalcode.org/varbase"
+  },
   "repositories": [
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "kenwheeler/slick",
+        "version": "1.6.0",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/kenwheeler/slick",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "dinbror/blazy",
+        "version": "1.8.2",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/dinbror/blazy",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
     }
   ],
   "require-dev": {
     "drupal/drupal-extension": "^3.2",
-    "drupal-composer/drupal-scaffold": "^2.0.0",
     "jakoch/phantomjs-installer": "1.9.8",
     "behat/behat": "^3.1",
     "drupal/coder": "8.*",
@@ -42,7 +77,9 @@
     "drupal/drupal-library-installer-plugin": "~0.3",
     "mkalkbrenner/php-htmldiff-advanced": "~0.0.8",
     "enyo/dropzone": "4.3.0",
-    "vardot/varbase": "8.4.0-beta17"
+    "dinbror/blazy": "1.8.2",
+    "kenwheeler/slick": "1.6.0",
+    "vardot/varbase": "8.4.0-rc1"
   },
   "config": {
       "bin-dir": "bin/"
@@ -92,8 +129,19 @@
         {
           "name": "dropzone",
           "package": "enyo/dropzone"
+        },
+        {
+          "name": "blazy",
+          "package": "dinbror/blazy"
+        },
+        {
+          "name": "slick",
+          "package": "kenwheeler/slick"
         }
       ]
+    },
+    "branch-alias": {
+      "dev-8.x-4.x": "8.4.x-dev"
     },
     "installer-paths": {
       "docroot/core": ["type:drupal-core"],
