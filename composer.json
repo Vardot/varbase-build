@@ -97,6 +97,9 @@
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "post-drupal-scaffold-cmd": [
+      "Vardot\\Varbase\\Procedures::postDrupalScaffoldProcedure"
+    ],
     "pre-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
