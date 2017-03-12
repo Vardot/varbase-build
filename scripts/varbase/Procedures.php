@@ -24,18 +24,28 @@ class Procedures {
   protected static function getDrupalRoot($project_root) {
     return $project_root . '/docroot';
   }
-
-  /**
-   * Post install procedure.
-   *
-   * @param \Composer\Script\Event $event
-   *   The script event.
-   */
-  public static function postInstallProcedure(Event $event) {
-    // Generated the new varbase info into the varbase info file.
-    Procedures::updateProfileInfoFile($event);
-  }
   
+  /**
+   * Get a list of Varbase features.
+   *
+   * @return array
+   */
+  protected static function getVarbaseVeatures() {
+    return array(
+      'varbase_admin',
+      'varbase_core',
+      'varbase_development',
+      'varbase_internationalization',
+      'varbase_landing',
+      'varbase_media',
+      'varbase_page',
+      'varbase_security',
+      'varbase_seo',
+      'varbase_site',
+      'varbase_user',
+    );
+  }
+ 
   /**
    * Post Drupal Scaffold Procedure.
    *
@@ -69,14 +79,29 @@ class Procedures {
   }
 
   /**
+   * Post install procedure.
+   *
+   * @param \Composer\Script\Event $event
+   *   The script event.
+   */
+  public static function postInstallProcedure(\Composer\Installer\PackageEvent $event) {
+    if ($event->getOperation()->getPackage()->getName() == "vardot/varbase") {
+      // Generated the new varbase info into the varbase info file.
+      Procedures::updateProfileInfoFiles($event);
+    }
+  }
+  
+  /**
    * Post update procedure.
    *
    * @param \Composer\Script\Event $event
    *   The script event.
    */
-  public static function postUpdateProcedure(Event $event) {
-    // Updated the new varbase info into the varbase info file.
-    Procedures::updateProfileInfoFile($event);
+  public static function postUpdateProcedure(\Composer\Installer\PackageEvent $event) {
+    if ($event->getOperation()->getPackage()->getName() == "vardot/varbase") {
+      // Generated the new varbase info into the varbase info file.
+      Procedures::updateProfileInfoFiles($event);
+    }
   }
 
   /**
@@ -84,7 +109,7 @@ class Procedures {
    *
    * @param Event $event
    */
-  public static function updateProfileInfoFile(Event $event) {
+  public static function updateProfileInfoFiles(\Composer\Installer\PackageEvent $event) {
 
     $fs = new Filesystem();
     $root = static::getDrupalRoot(getcwd());
@@ -92,21 +117,6 @@ class Procedures {
     // File name for the varbase.info.yml file.
     $varbase_info_file = '/profiles/varbase/varbase.info.yml';
     $varbase_info_file_with_root_path = $root . $varbase_info_file;
-
-    // File names for varbase features info files.
-    $varbase_features_info_files = array(
-      'varbase_admin' => '/profiles/varbase/modules/varbase_features/varbase_admin/varbase_admin.info.yml',
-      'varbase_core' => '/profiles/varbase/modules/varbase_features/varbase_core/varbase_core.info.yml',
-      'varbase_development' => '/profiles/varbase/modules/varbase_features/varbase_development/varbase_development.info.yml',
-      'varbase_internationalization' => '/profiles/varbase/modules/varbase_features/varbase_internationalization/varbase_internationalization.info.yml',
-      'varbase_landing' => '/profiles/varbase/modules/varbase_features/varbase_landing/varbase_landing.info.yml',
-      'varbase_media' => '/profiles/varbase/modules/varbase_features/varbase_media/varbase_media.info.yml',
-      'varbase_page' => '/profiles/varbase/modules/varbase_features/varbase_page/varbase_page.info.yml',
-      'varbase_security' => '/profiles/varbase/modules/varbase_features/varbase_security/varbase_security.info.yml',
-      'varbase_seo' => '/profiles/varbase/modules/varbase_features/varbase_seo/varbase_seo.info.yml',
-      'varbase_site' => '/profiles/varbase/modules/varbase_features/varbase_site/varbase_site.info.yml',
-      'varbase_user' => '/profiles/varbase/modules/varbase_features/varbase_user/varbase_user.info.yml',
-    );
 
     if ($fs->exists($varbase_info_file_with_root_path)) {
       $varbase_info_datestamp = time();
@@ -119,7 +129,7 @@ class Procedures {
         ->getRepositoryManager()
         ->getLocalRepository()
         ->findPackage('vardot/varbase', "*");
-      
+
       // Only get the version if it was not DEV. to follow Drupal standard.
       if (!$varbase_package->isDev()) {
         $varbase_version = $varbase_package->getVersion();
@@ -143,9 +153,13 @@ class Procedures {
       $event->getIO()->write(" - Updated files.");
       $event->getIO()->write($varbase_info_file);
       
+      // A list of Varbase features.
+      $varbase_features = static::getVarbaseVeatures();
+
       // Update all varbase features info.yml files.
-      foreach ($varbase_features_info_files as $varbase_feature_info_file) {
-        $varbase_feature_info_file_with_root_path = $root . $varbase_feature_info_file;
+      foreach ($varbase_features as $varbase_feature) {
+        $varbase_feature_info_file = '/profiles/varbase/modules/varbase_features/' . $varbase_feature . '/' . $varbase_feature . '.info.yml';
+        $varbase_feature_info_file_with_root_path = $root . $varbase_feature_info_file; 
         if ($fs->exists($varbase_feature_info_file_with_root_path)) {
           // Parse the varbase feature info.yml file.
           $varbase_feature_info = Yaml::parse(file_get_contents($varbase_feature_info_file_with_root_path));

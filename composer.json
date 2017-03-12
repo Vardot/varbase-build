@@ -79,7 +79,7 @@
     "enyo/dropzone": "4.3.0",
     "dinbror/blazy": "1.8.2",
     "kenwheeler/slick": "1.6.0",
-    "vardot/varbase": "8.4.x-dev"
+    "vardot/varbase": "8.4.0-rc1"
   },
   "config": {
       "bin-dir": "bin/"
@@ -107,11 +107,15 @@
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "Vardot\\Varbase\\Procedures::postInstallProcedure"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-package-install": [
+      "Vardot\\Varbase\\Procedures::postInstallProcedure"
+    ],
+    "post-package-update": [
       "Vardot\\Varbase\\Procedures::postUpdateProcedure"
     ],
     "create-new-vartheme": "scripts/varbase/cmd/create-new-vartheme.sh",
