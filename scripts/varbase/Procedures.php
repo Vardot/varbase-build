@@ -30,7 +30,7 @@ class Procedures {
    *
    * @return array
    */
-  protected static function getVarbaseVeatures() {
+  protected static function getVarbaseFeatures() {
     return array(
       'varbase_admin',
       'varbase_core',
@@ -43,6 +43,7 @@ class Procedures {
       'varbase_seo',
       'varbase_site',
       'varbase_user',
+      'varbase_webform',
     );
   }
  
@@ -154,7 +155,7 @@ class Procedures {
       $event->getIO()->write($varbase_info_file);
       
       // A list of Varbase features.
-      $varbase_features = static::getVarbaseVeatures();
+      $varbase_features = static::getVarbasefeatures();
 
       // Update all varbase features info.yml files.
       foreach ($varbase_features as $varbase_feature) {
