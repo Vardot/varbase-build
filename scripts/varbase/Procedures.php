@@ -77,6 +77,11 @@ class Procedures {
       }
       file_put_contents($htaccess_path, $lines);
     }
+    
+    if ($fs->exists($root . '/profiles/varbase/src/assets/development.services.yml')) {
+      // Alter development.services.yml to have Varbase's Local development services.
+      copy($root . '/profiles/varbase/src/assets/development.services.yml', $root . '/development.services.yml');
+    }
   }
 
   /**
