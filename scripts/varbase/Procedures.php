@@ -84,6 +84,54 @@ class Procedures {
       copy($root . '/profiles/varbase/src/assets/development.services.yml', $root . '/sites/development.services.yml');
     }
   }
+  
+  /**
+   * Post Drupal Scaffold Sub Profile Procedure.
+   *
+   *  Remove the distribution item for the parent varbase profile, as we will
+   *  use this sub profile as the distribution cover on the install step.
+   *  
+   *  This should be used in the composer.json file of a Sub Profile of Varbase
+   *
+   *  For Example:
+   *  -------------------------------------------------------------------------
+   *    "post-drupal-scaffold-cmd": [
+   *      "Vardot\\Varbase\\Procedures::postDrupalScaffoldProcedure",
+   *      "Vardot\\Varbase\\Procedures::postDrupalScaffoldSubProfileProcedure"
+   *    ],
+   *  -------------------------------------------------------------------------
+   * 
+   * @param \Composer\EventDispatcher\Event $event
+   *   The script event.
+   */
+  public static function postDrupalScaffoldSubProfileProcedure(\Composer\EventDispatcher\Event $event) {
+
+    $fs = new Filesystem();
+    $root = static::getDrupalRoot(getcwd());
+
+    // File name for the varbase.info.yml file.
+    $varbase_info_file = '/profiles/varbase/varbase.info.yml';
+    $varbase_info_file_with_root_path = $root . $varbase_info_file;
+
+    if ($fs->exists($varbase_info_file_with_root_path)) {
+      // Parse the varbase.info.yml file.
+      $varbase_info = Yaml::parse(file_get_contents($varbase_info_file_with_root_path));
+      
+      /**
+       *  Remove the distribution item for the parent varbase profile, as we will
+       *  use this sub proifle as the distribution cover on the install step.
+       */
+      if (isset($varbase_info['distribution'])) {
+        unset($varbase_info['distribution']);
+      }
+      
+      // Dump the array to string of Yaml format.
+      $new_varbase_info = Yaml::dump($varbase_info);
+
+      // Save the new varbase info into the varbase info file.
+      file_put_contents($varbase_info_file_with_root_path, $new_varbase_info);
+    }
+  }
 
   /**
    * Post install procedure.
