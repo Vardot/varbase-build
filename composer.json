@@ -93,7 +93,7 @@
     "dinbror/blazy": "1.8.2",
     "kenwheeler/slick": "1.6.0",
     "ajaxorg/ace-builds": "1.2.6",
-    "vardot/varbase": "8.4.04"
+    "vardot/varbase": "8.4.x-dev"
   },
   "config": {
       "bin-dir": "bin/",
