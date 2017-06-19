@@ -44,6 +44,7 @@ class Procedures {
       'varbase_site',
       'varbase_user',
       'varbase_webform',
+      'varbase_search',
     );
   }
  
