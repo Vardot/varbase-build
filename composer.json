@@ -1,6 +1,6 @@
 {
   "name": "vardot/varbase-build",
-  "description": "Drupal Bundled with Necessities | by Vardot projects with composer",
+  "description": "Varbase: The Ultimate Drupal 8 Bootstrap Distribution | by Vardot",
   "type": "project",
   "license": "GPL-2.0+",
   "authors": [
@@ -23,76 +23,14 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "kenwheeler/slick",
-        "version": "1.6.0",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/kenwheeler/slick",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "dinbror/blazy",
-        "version": "1.8.2",
-        "type": "drupal-library",
-        "source": {
-          "url": "https://github.com/dinbror/blazy",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "ajaxorg/ace-builds",
-        "version": "1.2.6",
-        "type": "library",
-        "source": {
-          "url": "https://github.com/ajaxorg/ace-builds",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
     }
   ],
-  "require-dev": {
-    "drupal/drupal-extension": "^3.2",
-    "jakoch/phantomjs-installer": "1.9.8",
-    "behat/behat": "^3.1",
-    "drupal/coder": "8.*",
-    "phing/phing": "^2.14",
-    "behat/mink": "~1.7",
-    "behat/mink-goutte-driver": "~1.2",
-    "behat/mink-zombie-driver": "@stable",
-    "behat/mink-selenium2-driver":  "~1.3",
-    "mikey179/vfsStream": "~1.2",
-    "phpunit/phpunit": "~4.8",
-    "guzzlehttp/guzzle": "6.2.*@stable",
-    "symfony/css-selector": "~2.8",
-    "squizlabs/php_codesniffer": "2.*",
-    "behatch/contexts": "*",
-    "emuse/behat-html-formatter": "@stable"
-  },
   "require": {
     "php": ">=5.6",
     "composer/installers": "^1.2.0",
     "cweagans/composer-patches": "^1.6.0",
     "drupal-composer/drupal-scaffold": "^2.2.0",
     "drupal/drupal-library-installer-plugin": "~0.3",
-    "mkalkbrenner/php-htmldiff-advanced": "~0.0.8",
-    "enyo/dropzone": "4.3.0",
-    "dinbror/blazy": "1.8.2",
-    "kenwheeler/slick": "1.6.0",
-    "ajaxorg/ace-builds": "1.2.6",
     "vardot/varbase": "8.4.x-dev"
   },
   "config": {
@@ -145,37 +83,15 @@
     "varbase-full-production-tests": "scripts/varbase/cmd/varbase-full-production-tests.sh"
   },
   "extra": {
-    "drupal-libraries": {
-      "library-directory": "docroot/libraries",
-      "libraries": [
-        {
-          "name": "dropzone",
-          "package": "enyo/dropzone"
-        },
-        {
-          "name": "blazy",
-          "package": "dinbror/blazy"
-        },
-        {
-          "name": "slick",
-          "package": "kenwheeler/slick"
-        },
-        {
-          "name": "ace",
-          "package": "ajaxorg/ace-builds"
-        }
-      ]
-    },
     "branch-alias": {
       "dev-8.x-4.x": "8.4.x-dev"
     },
     "installer-paths": {
-      "docroot/core": ["type:drupal-core"],
+      "docroot/core": ["drupal/core"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
-      "docroot/libraries/{$name}": ["type:drupal-library"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "docroot/libraries/{$name}": ["type:drupal-library"]
     },
     "enable-patching": true
   }
