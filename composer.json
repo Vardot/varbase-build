@@ -46,7 +46,7 @@
       "include": [
         "docroot/profiles/varbase/composer.json"
       ],
-      "recurse": true,
+      "recurse": false,
       "replace": false,
       "ignore-duplicates": false,
       "merge-dev": true,
