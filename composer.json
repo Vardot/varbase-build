@@ -1,7 +1,7 @@
 {
   "name": "vardot/varbase-build",
   "description": "Varbase: The Ultimate Drupal 8 Bootstrap Distribution | by Vardot",
-  "type": "project",
+ "type": "project",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -33,7 +33,6 @@
     "bin-dir": "bin/",
     "secure-http": false,
     "sort-packages": true,
-    "preferred-install": "source",
     "classmap-authoritative": true,
     "prepend-autoloader": false,
     "optimize-autoloader": true
@@ -48,7 +47,7 @@
       "include": [
         "docroot/profiles/varbase/composer.json"
       ],
-      "recurse": false,
+      "recurse": true,
       "replace": false,
       "merge-dev": true,
       "merge-extra": false,
