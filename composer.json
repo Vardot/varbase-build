@@ -30,29 +30,27 @@
     "vardot/varbase": "8.4.x-dev"
   },
   "config": {
-      "bin-dir": "bin/",
-      "secure-http": false
-  },
-  "conflict": {
-      "drupal/drupal": "*"
+    "bin-dir": "bin/",
+    "secure-http": false,
+    "sort-packages": true,
+    "preferred-install": "dist"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "conflict": {
+    "drupal/drupal": "*"
+  },
   "extra": {
-    "branch-alias": {
-      "dev-8.x-4.x": "8.4.x-dev"
-    },
     "merge-plugin": {
       "include": [
         "docroot/profiles/varbase/composer.json"
       ],
       "recurse": false,
       "replace": false,
-      "ignore-duplicates": false,
       "merge-dev": true,
-      "merge-extra": true,
+      "merge-extra": false,
       "merge-extra-deep": false,
-      "merge-scripts": true
+      "merge-scripts": false
     },
     "installer-paths": {
       "docroot/core": ["drupal/core"],
@@ -60,6 +58,8 @@
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
       "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "enable-patching": true
