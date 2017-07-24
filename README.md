@@ -36,7 +36,7 @@ or to create a new theme in the docroot/themes/custom
 composer create-new-vartheme "THEME_NAME" "ltr"
 ```
 
-## Automated testing
+# Automated testing
 To run the automated testing with behat you will need to change the [ wd_host and base_url ] settings in the
 [ behat.varbase.yml ] file to go with your project configuration and the selenium server.
 
@@ -69,39 +69,46 @@ So that we only run bin/behat --tags with the right tag for the environment.
 
 Run the varbase check tests. Only to check, without any changes to the website.
 ```
-  $ composer varbase-check-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --tags '@check' --format pretty --out std  --format html  --out tests/reports/varbase-check-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full local tests. which developers could test all scenarios in their local machine environment.
 ```
-  $ composer varbase-full-local-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --tags '@local' --format pretty --out std  --format html  --out tests/reports/varbase-full-local-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full development tests. which developers could test scenarios on the website at the development environment.
 ```
-  $ composer varbase-full-development-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --tags '@development' --format pretty --out std  --format html  --out tests/reports/varbase-full-development-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full staging tests. which developers could test scenarios on the website at the staging environment.
 ```
-  $ composer varbase-full-staging-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --tags '@staging' --format pretty --out std  --format html  --out tests/reports/varbase-full-staging-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full production only tests. not to change anything with test scenarios on the production environment.
 ```
-  $ composer varbase-full-production-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --tags '@production' --format pretty --out std  --format html  --out tests/reports/varbase-full-production-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full tests. init, apply, then cleanup.
 ```
-  $ composer varbase-init-tests
-  $ composer varbase-apply-tests
-  $ composer varbase-cleanup-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase/step1-init-tests --format pretty --out std  --format html  --out tests/reports/varbase-init-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
+../../../bin/behat tests/features/varbase/step2-apply-tests --format pretty --out std  --format html  --out tests/reports/varbase-apply-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
+../../../bin/behat tests/features/varbase/step3-cleanup-tests --format pretty --out std  --format html  --out tests/reports/varbase-cleanup-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 Run the varbase full tests. Which equivalent to varbase-init-tests, varbase-apply-tests, varbase-cleanup-tests
 ```
-$ composer varbase-full-tests
+cd docroot/profiles/varbase;
+../../../bin/behat tests/features/varbase --format pretty --out std  --format html  --out tests/reports/varbase-full-tests-report-$( date '+%Y-%m-%d_%H-%M-%S' );
 ```
 
 We could run behat tests with this set
