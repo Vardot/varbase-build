@@ -25,10 +25,10 @@ development work.
 composer create-project Vardot/varbase-build:8.x PROJECT_DIR_NAME --stability dev --no-interaction
 ```
 
-# [Create new Vartheme sub theme for a project](https://github.com/Vardot/varbase/tree/8.x-4.x/scripts/README.md)
+## [Create new Vartheme sub theme for a project](https://github.com/Vardot/varbase/tree/8.x-4.x/scripts/README.md)
 
-# [Automated Functional Testing](https://github.com/Vardot/varbase/blob/8.x-4.x/tests/README.md)
+## [Automated Functional Testing](https://github.com/Vardot/varbase/blob/8.x-4.x/tests/README.md)
 
-# [Varbase Gherkin features](https://github.com/Vardot/varbase/blob/8.x-4.x/tests/features/varbase/README.md)
+## [Varbase Gherkin features](https://github.com/Vardot/varbase/blob/8.x-4.x/tests/features/varbase/README.md)
 
-# [Varbase 8.4.x Developer Guide](https://docs.varbase.vardot.com)
+## [Varbase 8.4.x Developer Guide](https://docs.varbase.vardot.com)
