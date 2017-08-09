@@ -1,7 +1,7 @@
 {
   "name": "vardot/varbase-build",
   "description": "Varbase: The Ultimate Drupal 8 Bootstrap Distribution | by Vardot",
- "type": "project",
+  "type": "project",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -27,13 +27,11 @@
     "wikimedia/composer-merge-plugin": "~1.4",
     "drupal-composer/drupal-scaffold": "^2.2.0",
     "drupal/drupal-library-installer-plugin": "~0.3",
-    "vardot/varbase": "8.4.x-dev"
+    "vardot/varbase": "8.4.06"
   },
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "classmap-authoritative": true,
-    "prepend-autoloader": false,
     "optimize-autoloader": true
   },
   "minimum-stability": "dev",

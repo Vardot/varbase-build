@@ -1,8 +1,10 @@
 # Varbase Build
 
+Moving varbase build of projects to https://github.com/Vardot/varbase-project
+
 [![](https://docs.varbase.vardot.com/assets/Large-Logo%20Color%20with%20padding.png)](https://www.drupal.org/project/varbase)
 
-[![Build Status](https://travis-ci.org/Vardot/varbase.svg?branch=8.x-4.05)](https://travis-ci.org/Vardot/varbase/builds/251789744) Varbase 8.4.05
+[![Build Status](https://travis-ci.org/Vardot/varbase.svg?branch=8.x-4.06)](https://travis-ci.org/Vardot/varbase) Varbase 8.4.06
 
 ## Usage
 
@@ -15,7 +17,7 @@ for your setup.
 ## After that you can create the project:
 
 ```
-composer create-project Vardot/varbase-build:^8.4.05 PROJECT_DIR_NAME --no-dev --no-interaction
+composer create-project Vardot/varbase-build:^8.4.06 PROJECT_DIR_NAME --no-dev --no-interaction
 ```
 
 If you want to create a project with the development option, to get the latest
